@@ -1,0 +1,54 @@
+\documentclass{report}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images}}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\title{Dévelopement de l'application "Programation culturelle" pour Jolie Cité}
+\author{Sam Maxwell}
+\newcommand{\supervisor}{Marie Beurton-Aimar}
+\newcommand{\department}{Master 2 Bioinformatique}
+\newcommand{\UE}{Approche Objet}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+    % logo 
+	\includegraphics[width=0.5\textwidth]{logo_bx.png}\par\vspace{1cm}
+    % Department
+	{\scshape\LARGE Master 2 Bioinformatique \par}
+	\vspace{1cm}
+    % UE
+	{\scshape\Large Approche Objet\par}
+	\vspace{1.5cm}
+    % title
+    \par\noindent\rule{\textwidth}{0.5pt}
+	{\huge\bfseries Développement de l'application "Programmation Culturelle" pour Jolie Cité\par}
+    \par\noindent\rule{\textwidth}{0.5pt}\\[1cm]
+	\vspace{2cm}
+    \begin{minipage}[t]{0.47\textwidth}\raggedright
+        \textnormal{\large{\bf Auteur:\\}}
+        {\large Sam Maxwell}
+    \end{minipage}\hfill\begin{minipage}[t]{0.5\linewidth}\raggedleft
+        \textnormal{\large{\bf Superviseur:\\}}
+        {\large Marie Beurton-Aimar}
+    \end{minipage}
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+\tableofcontents
+\clearpage
+\input{sections/1_Analyse.tex}
+\input{sections/2_Conception.tex}
+\input{sections/3_Implementation.tex}
+\input{sections/conclusion.tex}
+
+\end{document}
+
