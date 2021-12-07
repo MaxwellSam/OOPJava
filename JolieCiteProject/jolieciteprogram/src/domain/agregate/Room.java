@@ -1,4 +1,4 @@
-package domain.entities;
+package domain.agregate;
 
 import java.sql.Array;
 import java.util.HashMap;
