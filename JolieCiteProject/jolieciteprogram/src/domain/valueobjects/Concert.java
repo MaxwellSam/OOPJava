@@ -1,18 +1,18 @@
 package domain.valueobjects;
 
-import java.sql.Date;
+import java.util.Calendar;
 
 public class Concert implements ShowInterface{
-     Date date;
+     Calendar date;
      String name;
 
-     public Concert(){
-
+     public Concert(String name, int ){
+        this.date = new Calendar()
      }
 
     @Override
-    public boolean checkDate(Date date) {
-        return this.date.compareTo(date) == 0; 
+    public boolean checkDate(Calendar date2) {
+        return this.date.compareTo(date2) != 0; 
     }
 
     @Override

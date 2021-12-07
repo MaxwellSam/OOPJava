@@ -1,7 +1,7 @@
 package domain.valueobjects;
-import java.sql.Date;
+import java.util.Calendar;
 
 public interface ShowInterface {
-    public boolean checkDate(Date date);
+    public boolean checkDate(Calendar date);
     public String getName();
 }
