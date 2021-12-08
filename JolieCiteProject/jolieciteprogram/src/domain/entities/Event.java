@@ -1,11 +1,14 @@
 package domain.entities;
 
+import java.util.Calendar;
 import domain.agregate.Room;
+import domain.valueobjects.ShowInterface;
 
 public class Event {
-    Capacity capacity
+    int capacity;
     Room room;
-    Date date;
+    Calendar date;
+    ShowInterface show;
 
     public Event(){
 

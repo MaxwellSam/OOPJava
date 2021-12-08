@@ -1,16 +1,22 @@
 package domain.agregate;
 
-import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
-public class Room {
-    private final Capacity capacity;
-    private HashMap<Date, Hourly> opening;
-    private Event[] events;
+import domain.entities.Event;
 
-    public Room(int cap, HashMap<Date, Hourly> op){
-        this.capacity = new Capacity(cap);
-        this.opening = op;
-        this.events = new 
+public class Room {
+    private final int capacity;
+    private HashMap<Calendar, Boolean> availability = new HashMap<Calendar, Boolean>();
+    private ArrayList<Event> events = new ArrayList<Event>(); 
+
+    public Room(int cap){
+        this.capacity = cap; 
+    }
+
+    public void placeEvent(Calendar date){
+        //1) Check date availability 
+        //2) Place Event
     }
 }

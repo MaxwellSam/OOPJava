@@ -1,13 +1,15 @@
 package domain.valueobjects;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Concert implements ShowInterface{
      Calendar date;
      String name;
 
-     public Concert(String name, int ){
-        this.date = new Calendar()
+     public Concert(String name, int[] date){
+        this.name = name;
+        this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4], date[6]);
      }
 
     @Override
