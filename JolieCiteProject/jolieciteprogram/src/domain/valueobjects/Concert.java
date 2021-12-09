@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Concert implements ShowInterface {
 
-    // Class variables
+    // Class Variables
     Calendar date;
     String name;
 
-    // Class constructor
+    // Class Constructor
     public Concert(String name, int[] date){
         this.name = name;
         this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4]);
@@ -21,9 +21,7 @@ public class Concert implements ShowInterface {
         this.date = date;
     }
 
-    // Class methods
-
-    // Override methods
+    // Override Methods
     @Override
     public boolean checkDate(Calendar date2) {
         return this.date.compareTo(date2) != 0; 
