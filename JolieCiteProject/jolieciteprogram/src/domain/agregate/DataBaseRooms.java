@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class DataBaseRooms {
+    
     ArrayList<Room> rooms = new ArrayList<Room>();
 
     public DataBaseRooms() {
@@ -16,6 +17,10 @@ public class DataBaseRooms {
             System.out.println("Room capacity: " + room.getCapacity());
             room.availabilityToString();
         }
+    }
+
+    public ArrayList<Room> getRooms() {
+        return this.rooms;
     }
 
     public ArrayList<Room> loadDB() {
