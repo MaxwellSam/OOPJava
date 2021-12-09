@@ -1,4 +1,7 @@
 package domain.entities;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 import domain.valueobjects.ShowInterface;
 
 public class Event {
@@ -16,6 +19,10 @@ public class Event {
 
     public ShowInterface getShow(){
         return show;
+    }
+
+    public ArrayList<Calendar> getDates(){
+        return this.show.getDate();
     }
 }
 

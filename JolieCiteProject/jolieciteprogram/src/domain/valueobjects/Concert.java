@@ -14,7 +14,7 @@ public class Concert implements ShowInterface {
     // Class Constructor
     public Concert(String name, int[] date){
         this.name = name;
-        this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4]);
+        this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], 00);
     }
     public Concert(String name, Calendar date){
         this.name = name;

@@ -26,6 +26,7 @@ public class Room {
         } 
     }
 
+
     // Class Methods
     public String getName(){
         return this.name;
@@ -34,10 +35,33 @@ public class Room {
     public int getCapacity(){
         return this.capacity;
     }
-
     public HashMap<Calendar, Boolean> getAvailability(){
         return this.availability;
     }
+
+
+
+        // Placing an event Methods
+
+    public boolean checkCapacity(int capacityNeeded){
+        return this.capacity >= capacityNeeded; 
+    }
+    public boolean checkAvalability(ArrayList<Calendar> dates){
+        for (Calendar dateAsked : dates){
+            if (!this.availability.containsKey(dateAsked) || !this.availability.get(dateAsked)){
+                return false;
+            }
+        }
+        return true;
+    }   
+
+    public void placeEvent(Event event){
+        for (Calendar date : event.getDates()){
+            this.availability.replace(date, false);
+        }
+        this.events.add(event);
+    }
+
 
     public void availabilityToString(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
@@ -51,8 +75,4 @@ public class Room {
         
     }
 
-    public void placeEvent(Event event){
-        //1) Check date availability 
-        //2) Place Event
-    }
 }
