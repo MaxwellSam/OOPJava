@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import domain.entities.*;
 
-public class ui {
+public class Ui {
 
     public static String displayNoPlacedEvent(ArrayList<Event> eventList) {
         String txt = "";
