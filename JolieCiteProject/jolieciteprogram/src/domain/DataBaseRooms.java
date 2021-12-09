@@ -32,7 +32,7 @@ public class DataBaseRooms {
         Calendar calendar2 = new GregorianCalendar(2021,12,11,20,00);
         Calendar calendar3 = new GregorianCalendar(2021,12,12,20,00);
         Calendar calendar4 = new GregorianCalendar(2021,12,13,20,00);
-        Calendar calendar5 = new GregorianCalendar(2021,12,14,20,00);
+        Calendar calendar5 = new GregorianCalendar(2021,12,14,20,00); // Expected: The Thierry Eight
         Calendar calendar6 = new GregorianCalendar(2021,12,15,20,00);
         
         Calendar calendar7 = new GregorianCalendar(2021,12,10,20,00); // Expected: White Eyes Peas
@@ -56,7 +56,7 @@ public class DataBaseRooms {
         Room room2 = new Room("L'olympia de Bourg sur Gironde",300,dates2); 
 
         Calendar[] dates3 = new Calendar[]{calendar13,calendar14,calendar15,calendar16,calendar17,calendar18};
-        Room room3 = new Room("L'olympia de Bourg sur Gironde",100,dates3); 
+        Room room3 = new Room("L'arkarena de Lacanau",100,dates3); 
 
         rooms.add(room1);
         rooms.add(room2);

@@ -11,6 +11,10 @@ public class DataBaseEvents {
         this.events = loadDB();
     }
 
+    public ArrayList<Event> getEvents() {
+        return this.events;
+    }
+
     public void displayDataBase(){
         for(Event event: this.events){
             System.out.println("Event capacity: " + event.getCapacity());
@@ -47,20 +51,28 @@ public class DataBaseEvents {
         Event event5 = new Event(20,show5);
         // Expected: Room3
 
-        int[] date6 = new int[]{ 2021,12,15,23,00 };
+        int[] date6 = new int[]{ 2021,12,15,20,00 };
         ShowInterface show6 = new Concert("BC/BG",date6);
         Event event6 = new Event(300,show6);
         // Expected: Room2
 
-        int[] date7 = new int[]{ 2021,12,14,29,00 };
+        int[] date7 = new int[]{ 2021,12,14,20,00 };
         ShowInterface show7 = new Concert("The Thierry Eight",date7);
         Event event7 = new Event(10,show7);
         // Expected: Room3 but no places, given Room2 but too big, need patching
 
-        int[] date8 = new int[]{ 2021,12,14,23,00 };
+        int[] date8 = new int[]{ 2021,12,23,20,00 };
         ShowInterface show8 = new Concert("Malas Vista Bank Club",date8);
         Event event8 = new Event(5,show8);
         // Expected: Room3
+
+        int[] dateTh1 = new int[]{ 2021,12,10,20,00 };
+        int[] dateTh2 = new int[]{ 2021,12,11,20,00 };
+        int[] dateTh3 = new int[]{ 2021,12,12,20,00 };
+        int[] dateTh4 = new int[]{ 2021,12,13,20,00 };
+        int[][] datesTh1 = new int[][]{ dateTh1, dateTh2, dateTh3, dateTh4 };
+        ShowInterface show9 = new TheaterPlay("Harry Globe Trotter",datesTh1);
+        Event event9 = new Event(400,show9);
 
         events.add(event1);
         events.add(event2);
@@ -70,6 +82,7 @@ public class DataBaseEvents {
         events.add(event6);
         events.add(event7);
         events.add(event8);
+        events.add(event9);
 
         return events;
     }
