@@ -3,6 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Arrays;
 
 import javax.swing.text.html.parser.Entity;
 
@@ -13,9 +14,14 @@ import domain.valueobjects.ShowInterface;
 import domain.valueobjects.TheaterPlay;
 import test.CalandarTest;
 
+import domain.agregate.*;
+
 public class ManagerRooms {
+
+    // Class Variables
     HashMap<String, Room> rooms = new HashMap<>();
     
+    // Class Constructor
     public ManagerRooms(){}
 
     // Creation Room methods
@@ -23,7 +29,22 @@ public class ManagerRooms {
         rooms.put(name, new Room(name, capacity, availability));
     };
 
+    public void addRooms(ArrayList<Room> rooms){
+        for(Room room : rooms){
+            this.rooms.put(room.getName(),room);
+        }
+    }
 
+    public HashMap<String, Room> getRooms() {
+        return this.rooms;
+    }
+
+    // Display Rooms
+    public void displayRooms(){
+        System.out.println(Arrays.asList(this.rooms));
+    } 
+
+    // Place Event in Rooms
     public boolean placeEvent(Event event){
         String keyRoomAvailable = "";
         int bestDelta = -1;
@@ -47,5 +68,5 @@ public class ManagerRooms {
         }
         this.rooms.get(keyRoomAvailable).placeEvent(event);
         return true;
-    } 
+    }
 }
