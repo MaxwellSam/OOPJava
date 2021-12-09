@@ -1,5 +1,6 @@
 package domain.agregate;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,6 +39,16 @@ public class Room {
         return this.availability;
     }
 
+    public String getInfosAsString(){
+        String txt = "";
+        txt+="# Room: "+this.name+"\tCapacity : "+this.capacity+"\n";
+        txt+="## Program\n";
+        for (String line : availabilityToString()){
+            txt+="- "+line+"\n";
+        }
+        return txt;
+    }
+
 
 
         // Placing an event Methods
@@ -61,17 +72,24 @@ public class Room {
         this.events.add(event);
     }
 
-
-    public void availabilityToString(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
+    public ArrayList<String> availabilityToString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd");
+        ArrayList<String> arrAvalStr = new ArrayList<>();
         for(Entry<Calendar, Boolean> entry : this.availability.entrySet()){
-
-            Calendar calendar = entry.getKey();
-            Boolean availability = entry.getValue();
-            System.out.println(sdf.format(calendar.getTime()) + " " + availability);
+            if (entry.getValue()){
+                arrAvalStr.add(""+sdf.format(entry.getKey().getTime())+ " --> Available");
+            } else {
+                String nameEvent = "";
+                for (Event event : events){
+                    if (event.getDates().contains(entry.getKey())){
+                        nameEvent = event.getShow().getName();
+                    }
+                }
+                arrAvalStr.add(""+sdf.format(entry.getKey().getTime())+ " --> Occuped : "+nameEvent);
+            }
 
         }
-        
+        return arrAvalStr;
     }
 
 }

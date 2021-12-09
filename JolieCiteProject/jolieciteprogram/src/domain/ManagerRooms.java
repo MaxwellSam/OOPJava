@@ -35,6 +35,14 @@ public class ManagerRooms {
         System.out.println(Arrays.asList(this.rooms));
     } 
 
+    public String getInfosAsString(){
+        String txt = "";
+        for (Room room : rooms.values()){
+            txt += room.getInfosAsString();
+        }
+        return txt;
+    }
+
     // Place Event in Rooms
     public boolean placeEvent(Event event){
         String keyRoomAvailable = "";
@@ -60,4 +68,16 @@ public class ManagerRooms {
         this.rooms.get(keyRoomAvailable).placeEvent(event);
         return true;
     }
+
+    public ArrayList<Event> placeListEvents(ArrayList<Event> listEvents){
+        // Try to place a list of events and return events which dates doen't match with city's rooms availabilities 
+        ArrayList<Event> eventNotPlaced = new ArrayList<Event>();
+        for (Event event : listEvents){
+            if (!placeEvent(event)){
+                eventNotPlaced.add(event);
+            }
+        }
+        return eventNotPlaced;
+    }
+
 }
