@@ -2,16 +2,30 @@ package domain.valueobjects;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
-public class Concert implements ShowInterface{
-     Calendar date;
-     String name;
 
-     public Concert(String name, int[] date){
+public class Concert implements ShowInterface {
+
+    // Class variables
+    Calendar date;
+    String name;
+
+    // Class constructor
+    public Concert(String name, int[] date){
         this.name = name;
-        this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4], date[6]);
-     }
+        this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4]);
+    }
 
+    // Class methods
+    public String getStrDateFormatted() {
+        Calendar date_ = this.date;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm");
+        return sdf.format(date_.getTime());
+    }
+
+    // Override methods
     @Override
     public boolean checkDate(Calendar date2) {
         return this.date.compareTo(date2) != 0; 
@@ -20,5 +34,12 @@ public class Concert implements ShowInterface{
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ArrayList<Calendar> getDate() {
+        ArrayList<Calendar> arr = new ArrayList<Calendar>();
+        arr.add(this.date);
+        return arr;
     }
  }
