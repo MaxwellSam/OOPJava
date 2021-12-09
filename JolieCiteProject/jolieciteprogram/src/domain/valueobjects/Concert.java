@@ -2,7 +2,6 @@ package domain.valueobjects;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -17,12 +16,9 @@ public class Concert implements ShowInterface {
         this.name = name;
         this.date = new GregorianCalendar(date[0], date[1], date[2], date[3], date[4]);
     }
-
-    // Class Methods
-    public String getStrDateFormatted() {
-        Calendar date_ = this.date;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm");
-        return sdf.format(date_.getTime());
+    public Concert(String name, Calendar date){
+        this.name = name;
+        this.date = date;
     }
 
     // Override Methods
@@ -37,9 +33,21 @@ public class Concert implements ShowInterface {
     }
 
     @Override
+    public String getType(){
+        return "Concert";
+    }
+
+    @Override
     public ArrayList<Calendar> getDate() {
         ArrayList<Calendar> arr = new ArrayList<Calendar>();
         arr.add(this.date);
         return arr;
+    }
+
+    @Override
+    public ArrayList<String> getDateFormatted() {
+        ArrayList<String> dateformated = new ArrayList<String>();
+        dateformated.add(sdf.format(this.date.getTime()));
+        return dateformated;
     }
  }
