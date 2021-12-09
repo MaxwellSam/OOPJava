@@ -2,7 +2,7 @@ package domain.valueobjects;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
 
 
 public class TheaterPlay implements ShowInterface {
@@ -12,35 +12,19 @@ public class TheaterPlay implements ShowInterface {
     ArrayList<Calendar> dates = new ArrayList<Calendar>();
 
     // Class constructor
+    public TheaterPlay(String name, int[][] dates){
+        this.name = name;
+        for (int[] d : dates){
+            this.dates.add(new GregorianCalendar(d[0], d[1], d[2], d[3], d[4]));
+        }  
+    }
     public TheaterPlay(String name, ArrayList<Calendar> dates){
         this.name = name;
-        this.dates = dates;    
+        this.dates = dates;
     }
 
     // Class methods
-    public void getDateFormatted() {
-        // Calendar date_ = this.date;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm");
-        String datesformatted = "";
-
-        
-
-
-        // for (int i = 0; i<this.dates.size(); i++) {
-        //     System.out.println(i);
-        //     if (i == this.dates.size()){
-        //         dateformatted += sdf.format(this.dates.get(i).getTime());
-        //         System.out.println(dateformatted);
-        //     }
-        //     else {
-        //         dateformatted += sdf.format(this.dates.get(i).getTime());
-        //         System.out.println(i);
-        //     }
-        // };
-        // SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm");
-        // return sdf.format(date_.getTime());
-    }
-
+    
     // Override methods
     @Override
     public boolean checkDate(Calendar date) {
@@ -53,8 +37,22 @@ public class TheaterPlay implements ShowInterface {
     }
 
     @Override
+    public String getType(){
+        return "TheaterPlay";
+    }
+
+    @Override
     public ArrayList<Calendar> getDate() {
         return this.dates;
+    }
+
+    @Override
+    public ArrayList<String> getDateFormatted() {
+        ArrayList<String> datesformatted = new ArrayList<>();
+        for (Calendar d : this.dates){
+            datesformatted.add(sdf.format(d.getTime()));
+        }
+        return datesformatted;
     }
 }
 
