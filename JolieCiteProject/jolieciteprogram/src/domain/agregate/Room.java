@@ -15,10 +15,14 @@ public class Room {
     private ArrayList<Event> events = new ArrayList<Event>(); 
 
     // Class Constructors
-    public Room(String name, int cap){
+    public Room(String name, int cap, Calendar[] dates){
         this.name = name;
         this.capacity = cap; 
+        for (Calendar date : dates){
+            this.availability.put(date, true);
+        } 
     }
+
 
     // Class Methods
     public String getName(){
@@ -29,8 +33,24 @@ public class Room {
         return this.capacity;
     }
 
-    public void placeEvent(Calendar date){
-        //1) Check date availability 
-        //2) Place Event
+        // Placing an event Methods
+
+    public boolean checkCapacity(int capacityNeeded){
+        return this.capacity >= capacityNeeded; 
+    }
+    public boolean checkAvalability(ArrayList<Calendar> dates){
+        for (Calendar dateAsked : dates){
+            if (!this.availability.containsKey(dateAsked) || !this.availability.get(dateAsked)){
+                return false;
+            }
+        }
+        return true;
+    }   
+
+    public void placeEvent(Event event){
+        for (Calendar date : event.getDates()){
+            this.availability.replace(date, false);
+        }
+        this.events.add(event);
     }
 }

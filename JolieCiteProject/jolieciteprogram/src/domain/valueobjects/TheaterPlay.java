@@ -15,7 +15,7 @@ public class TheaterPlay implements ShowInterface {
     public TheaterPlay(String name, int[][] dates){
         this.name = name;
         for (int[] d : dates){
-            this.dates.add(new GregorianCalendar(d[0], d[1], d[2], d[3], d[4]));
+            this.dates.add(new GregorianCalendar(d[0], d[1], d[2], d[3], 00));
         }  
     }
     public TheaterPlay(String name, ArrayList<Calendar> dates){
