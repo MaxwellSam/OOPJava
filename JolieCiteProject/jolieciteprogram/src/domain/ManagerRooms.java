@@ -4,17 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Arrays;
-
-import javax.swing.text.html.parser.Entity;
-
 import domain.agregate.Room;
 import domain.entities.Event;
-import domain.valueobjects.Concert;
-import domain.valueobjects.ShowInterface;
-import domain.valueobjects.TheaterPlay;
-import test.CalandarTest;
-
-import domain.agregate.*;
 
 public class ManagerRooms {
 
