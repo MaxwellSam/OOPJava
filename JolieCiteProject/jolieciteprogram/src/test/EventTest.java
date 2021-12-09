@@ -16,7 +16,7 @@ public class EventTest {
         System.out.println("Event show name: " + event.getShow().getName());
         System.out.println("Event show date: " + event.getShow().getDate());
         // test on capacity
-
+        
     }
     
 }

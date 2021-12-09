@@ -1,8 +1,11 @@
 package domain.agregate;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Map.Entry;
 
 import domain.entities.Event;
 
@@ -32,6 +35,11 @@ public class Room {
     public int getCapacity(){
         return this.capacity;
     }
+    public HashMap<Calendar, Boolean> getAvailability(){
+        return this.availability;
+    }
+
+
 
         // Placing an event Methods
 
@@ -53,4 +61,18 @@ public class Room {
         }
         this.events.add(event);
     }
+
+
+    public void availabilityToString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
+        for(Entry<Calendar, Boolean> entry : this.availability.entrySet()){
+
+            Calendar calendar = entry.getKey();
+            Boolean availability = entry.getValue();
+            System.out.println(sdf.format(calendar.getTime()) + " " + availability);
+
+        }
+        
+    }
+
 }
