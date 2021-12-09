@@ -1,2 +1,24 @@
 \chapter{Analyse}
 
+La ville de \textit{JolieCité} souhaite un programme de gestion de ses évenements culturels. 
+La ville dispose de 4 salles dont 3 sont disponibles pour acceuillir des évenements. 
+Elle recoit en debut d'année une liste d'évenements qui devront être affectés dans les salles disponibles. 
+L'objectif du projet est de développer un programme de gestion qui attribura aux évenements une salle.
+
+\section{Strucure des données}
+
+On distingues deux types d'évenements culturelles : \textbf{les concerts}, qui presentent un nom (le nom du groupe) et une date, et \textbf{les pièces de théatre} qui presentent egalement un nom (le nom de la pièce) mais se distinguent par une liste de dates.
+
+\textbf{Les évenements} ont une capacité de salle demandée. Ce critaire sera un paramétre decisif dans le choix de la salle pour l'évenement culturel.
+
+\textbf{Les salles} presentent une capacité maximal et des horaires d'ouvertures.
+
+\section{Contraintes}
+
+L'affectation des salles au évenements devra prendre en compte la capacité souhaité pour l'évenement. 
+La salle doit pouvoir acceillir le nombre de personnes attendu à l'évenement. 
+
+L'affectation devra egalement prendre en compte la disponibilité des salles. 
+Il faudra que les horaires de l'évenement correspondant avec les horaires disponnibles de la salle pour que cette dernière lui soit attribuée. 
+
+
