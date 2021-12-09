@@ -12,7 +12,7 @@ public class InterfaceShowTest {
         int[] date2 = new int[]{2021, 12, 27, 12, 33};
         int[] date3 = new int[]{2021, 12, 28, 12, 33};
         int[][] dates = new int[][]{date1, date2, date3};
-        ShowInterface SHOW2 = new TheaterPlay("BlackSwane", dates);
+        ShowInterface SHOW2 = new TheaterPlay("BlackSwann", dates);
         // test 1: Name and Dates
         System.out.println("test");
         System.out.printf("Name:%s\tDates:%s\tType:%s\n", SHOW1.getName(), SHOW1.getDateFormatted().toString(), SHOW1.getType()); 
