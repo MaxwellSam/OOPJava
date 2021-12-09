@@ -24,6 +24,15 @@ public class Event {
     public ArrayList<Calendar> getDates(){
         return this.show.getDate();
     }
+
+    public String getInfosAsString(){
+        String txt = "";
+        txt+="# Event: "+this.show.getName()+"\tType: "+this.show.getType()+"\n";
+        for (String date : show.getDateFormatted()){
+            txt+="- "+date+"\n";
+        }
+        return txt;
+    }
 }
 
 
