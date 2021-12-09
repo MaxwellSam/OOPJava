@@ -1,6 +1,6 @@
 package test;
-import domain.entities.*;
-import domain.agregate.*;
+import domain.DataBaseEvents;
+import domain.DataBaseRooms;
 
 public class DataBaseTest {
     public static void main(String[] args) {

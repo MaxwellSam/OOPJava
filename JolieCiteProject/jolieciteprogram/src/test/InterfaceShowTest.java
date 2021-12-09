@@ -1,7 +1,4 @@
 package test;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 import domain.valueobjects.*;
 
 public class InterfaceShowTest {

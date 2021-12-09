@@ -2,7 +2,6 @@ package test;
 import domain.agregate.*;
 
 import java.util.Calendar;
-import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
 public class RoomTest {

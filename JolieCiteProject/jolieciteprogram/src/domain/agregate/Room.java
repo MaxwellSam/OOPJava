@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Arrays;
 import java.util.Map.Entry;
 
 import domain.entities.Event;

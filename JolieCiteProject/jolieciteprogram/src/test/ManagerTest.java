@@ -1,12 +1,12 @@
 package test;
-import domain.entities.*;
-import domain.agregate.*;
+//import domain.DataBaseEvents;
+import domain.DataBaseRooms;
 import domain.ManagerRooms;
 
 public class ManagerTest {
     public static void main(String[] args) {
     // Load Events
-    DataBaseEvents events = new DataBaseEvents();
+    //DataBaseEvents events = new DataBaseEvents();
     // Load Rooms
     DataBaseRooms rooms = new DataBaseRooms();
 
